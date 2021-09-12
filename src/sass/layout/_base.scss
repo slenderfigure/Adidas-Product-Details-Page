@@ -1,0 +1,30 @@
+html, 
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  color: $darkGrey;
+  font-family: $interFontface;
+  font-size: $fontSizeRegular;
+  line-height: 1.2;
+  background-color: $lightGrey;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ::selection {
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    font-family: inherit;
+    font-size: inherit;
+    box-sizing: inherit;
+  }
+}

@@ -1,0 +1,61 @@
+.wrapper {
+  max-width: 88rem;
+  margin: auto;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  color: $black;
+  border: 1px solid $black;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+
+  &::before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    transition: opacity $easeInOutCirc;
+  }
+
+  &:hover:not(:disabled):before {
+    opacity: 1;
+  }
+
+  &:disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+  }
+
+  &-filled {
+    color: $white;
+    background-color: $black;
+  }
+}
+
+.icon {
+  display: block;
+  width: $fontSizeRegular;
+  height: $fontSizeRegular;
+  object-fit: contain;
+}

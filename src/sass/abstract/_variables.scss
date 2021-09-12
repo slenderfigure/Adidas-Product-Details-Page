@@ -1,0 +1,42 @@
+// Colors
+$orange: #ffa523;
+$darkOrange: #fd784f;
+$pink: #f724f3;
+$white: #fff;
+$lightGrey: #f8f8f8;
+$black: #111111;
+$darkGrey: #202020;
+
+// Color gradient
+@mixin gradient() {
+  background-image: linear-gradient(
+    to left bottom, 
+    #ffa523, 
+    #ff9c2d, 
+    #ff9335, 
+    #ff8a3d, 
+    #ff8245, 
+    #ff744f,
+    #ff665a,
+    #ff5866,
+    #ff3e7e,
+    #ff1e9f,
+    #ff00c6,
+    #f724f3
+  );
+}
+
+// Fonts
+$interFontface: 'Inter', Arial, Helvetica, sans-serif;
+$bebasFontface: 'Bebas Neue', Arial, Helvetica, sans-serif;
+$fontSizeSmallest: .8rem;
+$fontSizeSmall: .85rem;
+$fontSizeRegular: .9rem;
+$fontSizeMedium: 1.5rem;
+$fontSizeLarge: 2rem;
+$fontSizeLargest: 4rem;
+$fontSizeProductBkName: 50rem;
+
+
+// Transitions & animations
+$easeInOutCirc: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
