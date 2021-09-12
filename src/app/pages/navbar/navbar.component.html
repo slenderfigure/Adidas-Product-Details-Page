@@ -1,0 +1,49 @@
+<header class="header">
+  <nav class="header__navbar">
+    <a href="/" 
+      aria-label="Page Logo"
+      class="header__logo">
+      <img [src]="mainLogo" 
+        alt="Page Logo"         
+        draggable="false"
+        class="icon">
+    </a>
+
+    <ul class="header__nav-list" role="menubar">
+      <li *ngFor="let link of navLinks;" 
+        role="menuitem" 
+        class="header__nav-item">
+        <a [href]="link.url" class="header__nav-link">
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="header__user-options">
+      <button aria-label="Search Button"
+        class="header__search-btn">
+        <img src="assets/images/svg/search.svg" 
+          alt="Search icon"
+          draggable="false" 
+          class="icon">
+      </button>
+
+      <button aria-label="Cart Button"
+        class="header__cart-btn">
+        <img src="assets/images/svg/cart.svg" 
+          alt="Cart icon"
+          draggable="false" 
+          class="icon">
+        <span class="badge">10</span>
+      </button>
+
+      <button aria-label="Menu Button"
+        class="header__menu-btn">
+        <img src="assets/images/svg/menu.svg" 
+          alt="Menu icon"
+          draggable="false" 
+          class="icon">
+      </button>
+    </div>
+  </nav>
+</header>

@@ -1,11 +1,24 @@
-<div class="product-details">
-  <!-- <div class="product-details__product-name-bk">
-    <h1 class="product-name">
-      DAME 5
-    </h1>
-  </div> -->
-  <div class="product-name">
-    <div class="overlay overlay-1">DAME 5</div>
-    <div class="overlay overlay-2">DAME 5</div>
+<main class="product-details">
+  <div class="background-decoration">
+    <div class="product-name-bk-overlay">
+      <h1 class="product-name-bk">
+        {{ product.name }}
+      </h1>
+    </div>
+    <!-- <div class="product-name">
+      <div class="overlay overlay-1">DAME 5</div>
+      <div class="overlay overlay-2">DAME 5</div>
+    </div> -->
+  
+    <div class="stripes-overlay">
+      <div class="stripes-container">
+        <div *ngFor="let item of [1, 2, 3, 4, 5, 6, 7];" 
+          class="stripe">
+          <ng-container *ngIf="item === 4">
+            {{ product.name }}
+          </ng-container>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</main>

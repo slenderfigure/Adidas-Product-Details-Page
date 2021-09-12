@@ -29,14 +29,16 @@ $darkGrey: #202020;
 // Fonts
 $interFontface: 'Inter', Arial, Helvetica, sans-serif;
 $bebasFontface: 'Bebas Neue', Arial, Helvetica, sans-serif;
-$fontSizeSmallest: .8rem;
+$fontSizeSmallest: .75rem;
+$fontSizeSmaller: .8rem;
 $fontSizeSmall: .85rem;
 $fontSizeRegular: .9rem;
+$fontSizeNormal: 1rem;
 $fontSizeMedium: 1.5rem;
 $fontSizeLarge: 2rem;
 $fontSizeLargest: 4rem;
-$fontSizeProductBkName: 50rem;
+$fontSizeProductBkName: 60rem;
 
 
 // Transitions & animations
-$easeInOutCirc: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+$easeInOutCirc: 0.6s cubic-bezier(0, 0.55, 0.45, 1);
