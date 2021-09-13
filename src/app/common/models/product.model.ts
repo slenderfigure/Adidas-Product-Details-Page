@@ -1,6 +1,13 @@
+export type ProductVariant = { 
+  sku: string,
+  name: string, 
+  icon: string, 
+  colorCode?: string 
+}
+
 export type ProductMedia = {
-  featuredImage: string,
-  iconImage?: string
+  featured: string,
+  icon: string
   images?: string[]
 }
 
@@ -9,5 +16,7 @@ export interface Product {
   name: string;
   price: number;
   description: string,
-  media: ProductMedia
+  media: ProductMedia,
+  variants?: ProductVariant[],
+  rating: number
 }

@@ -41,4 +41,5 @@ $fontSizeProductBkName: 60rem;
 
 
 // Transitions & animations
-$easeInOutCirc: 0.6s cubic-bezier(0, 0.55, 0.45, 1);
+$easeInOutCirc: .6s cubic-bezier(0, 0.55, 0.45, 1);
+$easeInOutCircFast: .2s cubic-bezier(0, 0.55, 0.45, 1);

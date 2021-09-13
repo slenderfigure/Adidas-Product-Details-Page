@@ -1,7 +1,4 @@
-export interface Navlink {
-  label: string;
-  url: string;
-}
+import { Navlink } from "src/app/common/models/navlink.model";
 
 export const NAVLINKS: Navlink[] = [
   { 

@@ -132,11 +132,11 @@
       border-radius: 50%;
       background-color: rgba(0, 0, 0, .1);
       transition: opacity $easeInOutCirc;
+      z-index: -1;
     }
 
     &:hover::before {
       opacity: 1;
-      z-index: -1;
     }
   }
 
@@ -161,7 +161,7 @@
       min-width: 20.38px;
       padding: .2rem;
       font-size: .7rem;
-      background-color: $black;
+      background-color: $darkGrey;
       border-radius: 50%;
       box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
       user-select: none;

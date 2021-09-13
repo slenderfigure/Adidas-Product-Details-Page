@@ -21,4 +21,138 @@
       </div>
     </div>
   </div>
+
+  <section class="product-details__content-grid">
+    <aside class="product-details__product-media-cta">
+      <ul class="image-list" role="menu">
+        <li *ngFor="let item of product.media.images; let i=index"
+          [attr.active-image]="item === selectedImage ? '' : null"
+          role="menu" 
+          class="image-list-item">
+          <button type="button"
+            aria-label="Change product image"
+            class="switch-btn"></button>
+          <span class="number-label">
+            {{ (i + 1) < 10 ? '0' + (i + 1) : i }}
+          </span>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="product-details__content">
+      <figure class="product-details__image">
+        <img [src]="product.media.featured" 
+          [alt]="product.name" 
+          class="image"
+          draggable="false"
+          loading="lazy">
+      </figure>
+
+      <div class="column">
+        <div class="product-details__rating">
+          <button *ngFor="let star of [1, 2, 3, 4, 5]"
+            aria-label="Star rating" 
+            class="star-btn" 
+            type="button">
+            <img src="/assets/images/svg/star.svg" 
+              alt="icon"
+              draggable="false" 
+              class="icon">
+          </button>
+        </div>
+
+        <h3 class="product-details__product-name">
+          {{ product.name }}
+        </h3>
+
+        <p class="product-details__product-price">
+          {{ product.price | currency }}
+        </p>
+
+        <article class="product-details__description">
+          <p class="text">{{ product.description }}</p>
+        </article>
+        
+        <div class="product-details__main-cta">
+          <div class="row">
+            <button type="button" class="size-btn button">
+              Select size
+              <img src="/assets/images/svg/chevron-down.svg" 
+                alt="icon" 
+                draggable="false"
+                class="icon">
+            </button>
+
+            <input type="number"
+              value="1"
+              class="quantity button button-circle">
+          </div>
+
+          <div class="row">
+            <button type="button"
+              class="add-cart-btn button button-filled">
+              Add to bag
+            </button>
+
+            <button type="button"
+              class="favorite-btn button button-circle button-white">
+              <img src="/assets/images/svg/heart.svg" 
+                alt="icon" 
+                draggable="false"
+                class="icon">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="product-details__product-variants-cta">
+      <form *ngIf="product.variants" class="variant-form">
+        <div *ngFor="let variant of product.variants;" 
+          class="form-control">
+          <input [id]="variant.sku"
+            name="variant"
+            type="radio"
+            role="menuitem" 
+            class="variant-input"
+            [checked]="variant.sku === '0003'">
+          <label [for]="variant.sku" 
+            class="variant-btn" 
+            tabindex="0">
+            <img [src]="variant.icon" 
+              [alt]="variant.name" 
+              class="image"
+              draggable="false">
+          </label>
+        </div>
+      </form>
+    </aside>
+
+    <footer class="product-details__footer">
+      <button type="button"
+        class="support-btn button button-circle button-black">
+        <img src="assets/images/svg/headset.svg" 
+          alt="Twitter icon" 
+          class="icon"
+          draggable="false">
+      </button>
+
+      <ul role="menubar" class="footer-link-list">
+        <li *ngFor="let link of footerLinks"
+          role="menuitem" 
+          class="list-item">
+          <a [href]="link.url" 
+            [attr.aria-label]="link.label"
+            target="_blank"
+            rel="noreferrer nofollow"
+            class="footer-link">
+            <img [src]="link.icon" 
+              alt="Twitter icon" 
+              class="icon"
+              draggable="false">
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </section>
 </main>
