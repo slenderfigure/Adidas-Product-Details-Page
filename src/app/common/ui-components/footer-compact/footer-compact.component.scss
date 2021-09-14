@@ -1,0 +1,55 @@
+@import '/src/sass/abstract/variables';
+@import '/src/sass/abstract/utilities';
+
+:host {
+  display: block;
+  width: 100%;
+  grid-column: 1/-1;
+}
+
+.product-details__footer {
+  width: 100%;
+  min-height: 4rem;
+  padding: 2rem;
+  user-select: none;
+
+  .footer-link-list {
+    justify-content: flex-end;
+    display: flex;
+    gap: 2rem;
+
+    .footer-link {
+      display: block;
+      position: relative;
+      border-radius: 50%;
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px $darkGrey;
+      }  
+
+      &::before {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, .1);
+        transition: opacity $easeInOutCirc;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}

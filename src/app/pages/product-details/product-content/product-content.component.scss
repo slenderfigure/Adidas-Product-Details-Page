@@ -1,0 +1,107 @@
+@import '/src/sass/abstract/variables';
+@import '/src/sass/abstract/utilities';
+
+:host {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  color: $white;
+
+  .product-details__image {
+    position: relative;
+    max-width: 800px;
+    padding-top: 4rem;
+    transform: rotate(-15deg) translate(40%, 0rem);
+    user-select: none;
+
+    &::before {
+      content: '';
+      opacity: .4;
+      position: absolute;
+      top: -4rem;
+      left: 5rem;
+      width: 30rem;
+      height: 30rem;
+      transform: rotate(15deg);
+      background-image: url('/assets/images/svg/hexagons.svg');
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 7rem 6rem rgba($black, .6));
+    }
+  }
+
+  .product-details__information {
+    position: relative;
+    max-width: 20rem;
+    justify-self: flex-end;
+    z-index: 1;
+  }
+
+  .product-details__rating {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+
+    .star-btn {
+      padding: 0;
+    }
+  }
+
+  .product-details__product-name {
+    margin-bottom: 1rem;
+    font-size: 3.7rem;
+    text-transform: uppercase;
+  }
+
+  .product-details__product-price {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .product-details__description {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+  }
+
+  .product-details__main-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    .row {
+      display: flex;
+      gap: .8rem;
+    }
+
+    .quantity {
+      flex-shrink: 0;
+      text-align: center;
+      cursor: auto;
+    }
+
+    .favorite-btn {
+      flex-shrink: 0;
+    }
+  }
+}

@@ -8,7 +8,7 @@ export type ProductVariant = {
 export type ProductMedia = {
   featured: string,
   icon: string
-  images?: string[]
+  images: string[]
 }
 
 export interface Product {
@@ -17,6 +17,6 @@ export interface Product {
   price: number;
   description: string,
   media: ProductMedia,
-  variants?: ProductVariant[],
+  variants: ProductVariant[],
   rating: number
 }

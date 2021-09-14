@@ -1,0 +1,19 @@
+<form class="variant-form">
+  <div *ngFor="let variant of productVariants;" 
+    class="form-control">
+    <input [id]="variant.sku"
+      name="variant"
+      type="radio"
+      role="menuitemradio" 
+      class="variant-input"
+      [checked]="variant.sku === activeVariant">
+    <label [for]="variant.sku" 
+      class="variant-btn" 
+      tabindex="0">
+      <img [src]="variant.icon" 
+        [alt]="variant.name" 
+        class="image"
+        draggable="false">
+    </label>
+  </div>
+</form>

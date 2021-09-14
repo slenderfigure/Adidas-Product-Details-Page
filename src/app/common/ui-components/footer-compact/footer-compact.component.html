@@ -1,0 +1,20 @@
+<footer class="product-details__footer">
+  <ul role="menubar" class="footer-link-list">
+    <li *ngFor="let link of footerLinks"
+      role="menuitem" 
+      class="list-item">
+      <a [href]="link.url" 
+        [attr.aria-label]="link.label"
+        target="_blank"
+        rel="noreferrer nofollow"
+        class="footer-link">
+        <img [src]="link.icon" 
+          alt="Twitter icon" 
+          class="icon"
+          draggable="false">
+      </a>
+    </li>
+  </ul>
+
+  <adi-support-chat></adi-support-chat>
+</footer>

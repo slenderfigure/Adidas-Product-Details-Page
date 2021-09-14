@@ -1,0 +1,13 @@
+<ul class="product-image-list" role="menubar">
+  <li *ngFor="let item of productImages; let i=index"
+    [attr.active-image]="item === selectedImage ? '' : null"
+    role="menuitem" 
+    class="product-image-list-item">
+    <button type="button"
+      aria-label="Change product image"
+      class="switch-btn"></button>
+    <span class="number-label">
+      {{ (i + 1) < 10 ? '0' + (i + 1) : i }}
+    </span>
+  </li>
+</ul>

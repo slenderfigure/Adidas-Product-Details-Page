@@ -1,0 +1,82 @@
+@import '/src/sass/abstract/variables';
+@import '/src/sass/abstract/utilities';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  user-select: none;
+
+  .variant-form {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 1.2rem;
+  }
+
+  .variant-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: .3rem;
+    background-color: $lightGrey;
+    border-radius: 50%;
+    transition: transform $easeInOutCircFast;
+    cursor: pointer;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px $darkGrey;
+    }
+
+    &::before {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 2rem rgba(0, 0, 0, .4);
+      transition: opacity $easeInOutCircFast;
+    }
+
+    &::after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      left: -.25rem;
+      top: 50%;
+      width: .5rem;
+      height: .5rem;
+      background-color: $darkGrey;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .variant-input {
+    display: none;
+    width: 0;
+
+    &:checked + .variant-btn {
+      transform: scale(1.1);
+
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
